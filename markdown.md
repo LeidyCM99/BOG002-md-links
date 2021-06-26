@@ -13,4 +13,3 @@ Pero no estoy hablando solo de blogs o páginas web. Servicios como Trello o for
 ### Referencia
 [Tomado de ](https://markdown.es/) 
 [Tomado de daring fireball](https://daringfireball.net/projects/markdown/syntax)
-[ fireball](https://daringfireball.net/projects/markdown/syntax)

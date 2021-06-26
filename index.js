@@ -2,13 +2,19 @@
 
 const fs = require("fs");
 const path = require('path');
+const fetch = require('node-fetch');
 
 // LIBRERIAS DESCARGADAS
-const marked = require('marked');
-const jsdom = require("jsdom");
 
+const marked = require('marked');
+
+
+const options ={
+	validate:true
+}
 
 // Comprobando que sea exista una ruta, que sea absoluta y/o convirtiendola en una.
+
 const PathMD = './markdown.md';
 
 if (PathMD === "") {
@@ -36,50 +42,47 @@ function ReadFile() {
 			if (err) {
 				console.error(err)
 			}
-			mostrar(data)
+			ShowLinks(data)
 		})
 	}
 }
 
 
 // Entrega de links con href, file y text
-const mostrar = (data) => {
+function ShowLinks(data) {
 	const array = [];
 	const renderer = {
-		link(href, file,  text) {
-			
+
+		link(href, file, text) {
 			const objetos = {
-				href,  file: PathMD, text
+				href: href,
+				file: PathMD,
+				text: text,
 			};
-			 array.push(objetos);
+			array.push(objetos);
 			return array
 		}
 	};
-	
-	marked.use({renderer});	
+
+	marked.use({ renderer });
 	const html = marked(data)
-	console.log(renderer.link())
-}
+	
+	const NewArray = renderer.link()
+	NewArray.forEach(obj => {
+		fetch(obj.href)
+			.then((response) => {
+				console.log( "status:  ", response.status, obj)
+				
+			})
+			.catch((error) => {
+				console.log(error)
+			})
+	})
+};
+
+
+// Status 
 
 
 
-// mdLinks(path, object) 
-//   .then(links => {
-// 	  console.log(links)
-//     // => [{ href, text, file }]
-//   })
 
-
-
-// module.exports = () => {
-//   // ...
-// };
-// validate, status htpp
-
-// function promise (){
-// 	return new promise( function (reject, resolve)
-// 	{
-// 		fs.readFile(PathMD, 'utf8')// Leyendo el documento
-		
-// 	})
-// }
