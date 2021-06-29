@@ -38,3 +38,7 @@
 // 	resolve(objectos)
 	
 // })
+
+// Object.entries(obj).forEach(([key, value]) => {
+// 	console.log( value  );
+// });
