@@ -89,3 +89,12 @@
 	//  } else {
 	// 	 console.log("objeto unicamente")
 	//  }
+
+	// return new Promise((resolve, reject)=>{
+	// 	fs.readFile(ruta, 'utf8', (err, data) => {// Leyendo el documento
+	// 	reject ( console.error(err));
+	// 	const objetos = GetLinks(data, ruta)
+	// 	if (options.validate === false) return resolve (console.log(objetos))
+	// 	if (options.validate === true) return resolve (console.log(objetos.push(Status(objetos))))
+	// }
+	// )})
