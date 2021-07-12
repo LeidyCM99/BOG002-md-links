@@ -2,6 +2,9 @@
   "homepage": "https://github.com/PaolaCM99/BOG002-md-links",
   "name": "md-links",
   "version": "0.1.0",
+  "bin": {
+    "Welcome": "./cli.js"
+  },
   "dependencies": {
     "chalk": "^4.1.1",
     "marked": "^2.1.1",

@@ -1,18 +1,25 @@
-const index  = require('./index.js');
-const PathMD = './markdown.md';
-const options = {
-	validate: true,
-	stats: false
-}
+const index = require('./index.js');
 
 function MdLinks(ruta, options) {
-	return index.absolutePath(ruta, options)
+	const existPath    = index.fileExist(ruta);//boolean
+	const absolutePath = index.absolutePath(ruta);
+	const fileMd       = index.getMd(absolutePath); //boolean
+	const readerFile   = index.reader(absolutePath);
+
+	return new Promise((resolve, reject) => {
+		readerFile.then((file) => {
+			const links = index.getLinks(file, absolutePath)
+			if (options.validate== true) {
+				resolve (index.statusLinks(links) )
+			} else {
+				resolve(links)
+			}
+			reject(new Error("error")); //error personalizado
+		})
+			.catch((err) => console.error((err)))
+	})
 }
 
-MdLinks(PathMD, options) 
-	.then((result) => {
-		console.log(result,index.stats(result))
-	})
-	
-
-	// node mdlinks.js
+module.exports = {
+	MdLinks
+}

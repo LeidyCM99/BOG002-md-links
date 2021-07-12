@@ -23,3 +23,36 @@
 		
 // 	}
 // }
+
+//reader
+			// const objetos = getLinks(file, ruta)
+			// if (options.validate === false) resolve(objetos);
+			// if (options.validate === true) {
+			// 	statusLinks(objetos)
+			// 		.then((result) => {
+			// 			resolve(result)
+			// 		})
+			// }
+			// if (err) reject(new Error(err))
+
+
+
+			
+// function userOptions(ruta, options, result) {
+// 	const objetos= getLinks(file, ruta);
+//    if (options.stats ==true && options.validate ==false) {
+// 	   stats(result)
+//    } 
+//    if (options.stats== false && options.validate== true){
+// 	   statusLinks(objetos)
+// 	   .then((result) => {
+// 		   console.log( result)
+// 	   })
+//    }
+//    if (options.validate==true && options.stats == true){
+// 	   console.log(statusLinks(objetos), stats(result))
+//    }
+//    if (options.validate==false && options.stats == false){
+// 	   reader(ruta, options).then((result)=>{console.log(result)}
+// 	   )}
+// }
