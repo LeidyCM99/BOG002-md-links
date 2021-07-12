@@ -2,36 +2,36 @@ const fs = require("fs");
 const path = require('path');
 const fetch = require('node-fetch');
 const marked = require('marked');
-
+const chalk = require('chalk');
 // Comprobando existencia de la ruta, que sea absoluta y/o convirtiendola en una
-const fileExist = (ruta) => (fs.existsSync(ruta))
+
+const fileExist = (ruta) => (fs.existsSync(ruta));
+const getMd = (ruta) => (path.extname(ruta) === '.md');
 
 const absolutePath = (ruta) => {
 	if (path.isAbsolute(ruta) == false) {
 		return ruta = path.resolve(ruta);
 	}
 }
-const getMd = (ruta) => (path.extname(ruta) === '.md')
-
-
-// 	// return !extensionArchivo.exec(ruta) ? new Error("Error: File is not .md") : reader(ruta, options)
-// }
-
 // Comprobando que sea un archivo markdown y leyendolo
-
-function reader(ruta) { //mas pura
+const reader = (ruta) => {
 	return new Promise((resolve, reject) => {
-		fs.readFile(ruta, 'utf8', (err, file) => {// Leyendo el documento
-			resolve(file);
-			reject(new Error(err))
-		})
+		if (fileExist(ruta) && getMd(ruta) == true) {
+			fs.readFile(ruta, 'utf8', (err, file) => {// Leyendo el documento
+				resolve(file);
+				reject(new Error(chalk.white.bgRed(err)))
+			})
+		} else {
+			reject(
+				new Error(chalk.white.bgRed("The file does not exist or is not an md file "))
+			)
+		}
 	})
 }
 
-
 // Entrega de links con href, file y text
 const getLinks = (html, ruta) => {
-	
+
 	const array = [];
 	const renderer = {
 		link(href, file, text) {
@@ -53,9 +53,9 @@ const statusLinks = (objetos) => {
 		return fetch(obj.href)
 			.then((response) => {
 				if (response.status >= 400) {
-					return { ...obj, status: 'FAIL', code: response.status }
+					return { ...obj, status:'FAIL', code: response.status }
 				} else {
-					return { ...obj, status: 'OK', code: response.status }
+					return { ...obj, status: 'OK', code: response.status}
 				}
 			})
 			.catch((error) => {
@@ -65,26 +65,27 @@ const statusLinks = (objetos) => {
 	return (Promise.all(arrayStatus))
 }
 
-// function stats(result) {
-// 	const broken = result.filter(item => item.status === "FAIL");
-// 	const unique = [...new Set(result.map((item) => item.href))];
-// 	const items = {
-// 		Total: result.length,
-// 		Unique: unique.length,
-// 		Broken: broken.length
-// 	}
-// 	return items
-// }
+function stats(result) {
+	const unique = [...new Set(result.map((item) => item.href))];
+	const items = {
+		Total: result.length,
+		Unique: unique.length
+	}
+	return items
+}
 
+function broken(result){
+	const broken = result.filter(item => item.status == 'FAIL');
+	const bronkenLink={
+		Broken: broken.length
+	}
+	return bronkenLink
+}
 
 
 module.exports = {
-	fileExist,
-	// stats,
-	absolutePath,
-	reader,
-	getMd,
-	getLinks 
+	fileExist,stats,absolutePath,reader,
+	getMd,getLinks,statusLinks, broken
 }
 
 
