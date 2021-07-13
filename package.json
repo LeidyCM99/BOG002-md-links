@@ -1,11 +1,20 @@
 {
-  "homepage": "https://github.com/PaolaCM99/BOG002-md-links",
-  "name": "md-links",
+  "name":  "@paolacm99/npm-mdlinks-libreria",
   "version": "0.1.0",
+  "description": "",
+  "main": "cli.js",
+  "repository": "git://github.com/PaolaCM99/BOG002-md-links",
+  
+  "publishConfig": {
+	"registry":"https://npm.pkg.github.com"
+  },
   "dependencies": {
     "chalk": "^4.1.1",
     "marked": "^2.1.1",
     "node-fetch": "^2.6.1",
     "yargs": "^17.0.1"
-  }
+  },
+  "author": "Leidy Paola Castro",
+  "license": "ISC"
+
 }
