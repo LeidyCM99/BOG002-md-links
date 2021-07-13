@@ -1,12 +1,17 @@
 {
   "name":  "@paolacm99/npm-mdlinks-libreria",
   "version": "0.1.0",
+<<<<<<< HEAD
   "description": "",
   "main": "cli.js",
   "repository": "git://github.com/PaolaCM99/BOG002-md-links",
   
   "publishConfig": {
 	"registry":"https://npm.pkg.github.com"
+=======
+  "bin": {
+    "Welcome": "./cli.js"
+>>>>>>> c874502b27f66e239eb3995a529549c9f07bd85b
   },
   "dependencies": {
     "chalk": "^4.1.1",
