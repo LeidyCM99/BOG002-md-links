@@ -11,17 +11,12 @@ const getMd = (ruta) => (path.extname(ruta) === '.md');
 const absolutePath = (ruta) => {
 	if (path.isAbsolute(ruta) == false) {
 		return ruta = path.resolve(ruta);
-<<<<<<< HEAD
 	}
 	else{
 		return ruta
 	}
 }
 
-=======
-	}
-}
->>>>>>> c874502b27f66e239eb3995a529549c9f07bd85b
 // Comprobando que sea un archivo markdown y leyendolo
 const reader = (ruta) => {
 	return new Promise((resolve, reject) => {
@@ -62,15 +57,9 @@ const statusLinks = (objetos) => {
 		return fetch(obj.href)
 			.then((response) => {
 				if (response.status >= 400) {
-<<<<<<< HEAD
 					return { ...obj, status: 'FAIL', code: response.status }
 				} else {
 					return { ...obj, status: 'OK', code: response.status }
-=======
-					return { ...obj, status:'FAIL', code: response.status }
-				} else {
-					return { ...obj, status: 'OK', code: response.status}
->>>>>>> c874502b27f66e239eb3995a529549c9f07bd85b
 				}
 			})
 			.catch((error) => {
@@ -89,27 +78,12 @@ function stats(result) {
 	return items
 }
 
-<<<<<<< HEAD
 function broken(result) {
 	const broken = result.filter(item => item.status == 'FAIL');
 	const bronkenLink = {
 		Broken: broken.length
 	}
 	return bronkenLink
-=======
-function broken(result){
-	const broken = result.filter(item => item.status == 'FAIL');
-	const bronkenLink={
-		Broken: broken.length
-	}
-	return bronkenLink
-}
-
-
-module.exports = {
-	fileExist,stats,absolutePath,reader,
-	getMd,getLinks,statusLinks, broken
->>>>>>> c874502b27f66e239eb3995a529549c9f07bd85b
 }
 
 

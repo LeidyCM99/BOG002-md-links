@@ -1,12 +1,16 @@
-const mdLinks = require('../mdlinks');
-
+const md = require('../mdlinks.js');
 
 describe('mdLinks', () => {
-
   it('should a function',() => {
-    console.log('FIX ME!');
+	expect(typeof md.MdLinks).toBe('function');
   });
 
+  test('resolve of mdlinks', () => {
+	return md.MdLinks("markdown.md", {validate:true}).then(data => {
+		console.log(data)
+	//   expect(typeof data).toBe('array');
+	});
+  });
 });
 
 
