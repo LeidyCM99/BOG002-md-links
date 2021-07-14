@@ -1,5 +1,28 @@
 # Markdown Links
 
+
+## ¿Que es?
+
+Es una libreria descargable que te permite extraer los links de documento markdown ademas puedes validar y obtener el status de cada uno de aquellos links, tambien por medio de las estadisticas obtener un total, unicos y los rotos.
+
+## ¿Como lo instalo?
+```sh
+$ md-links ./some/example.md
+./some/example.md http://algo.com/2/3/ Link a algo
+./some/example.md https://otra-cosa.net/algun-doc.html algún doc
+./some/example.md http://google.com/ Google
+```
+## ¿Que puedo ver?
+
+### --validate
+
+### --stats
+
+### --validate --stats
+
+
+
+
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)

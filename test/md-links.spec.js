@@ -1,6 +1,6 @@
 const md = require('../mdlinks.js');
 
-describe('mdLinks', () => {
+describe('function mdLinks', () => {
   it('should a function',() => {
 	expect(typeof md.MdLinks).toBe('function');
   });

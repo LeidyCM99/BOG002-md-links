@@ -1,12 +1,14 @@
 {
-  "name":  "@paolacm99/npm-mdlinks-libreria",
+  "name": "@paolacm99/npm-mdlinks-libreria",
   "version": "0.1.0",
-  "description": "",
+  "description": "Es una libreria que te permite extraer los links de documento markdown ademas puedes validar \r aquellos links",
   "main": "cli.js",
-  "repository": "git://github.com/PaolaCM99/BOG002-md-links",
-  
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PaolaCM99/BOG002-md-links.git"
+  },
   "publishConfig": {
-	"registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
     "chalk": "^4.1.1",
@@ -14,9 +16,20 @@
     "node-fetch": "^2.6.1",
     "yargs": "^17.0.1"
   },
+  "bin": {
+    "mdlinks": "cli.js"
+  },
   "author": "Leidy Paola Castro",
   "license": "ISC",
-  "scripts" : { 
-    "test" : "jest" 
- }
+  "scripts": {
+    "test": "jest"
+  },
+  "bugs": {
+    "url": "https://github.com/PaolaCM99/BOG002-md-links/issues"
+  },
+  "homepage": "https://github.com/PaolaCM99/BOG002-md-links#readme",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
 }

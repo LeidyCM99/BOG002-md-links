@@ -62,8 +62,8 @@ const statusLinks = (objetos) => {
 					return { ...obj, status: 'OK', code: response.status }
 				}
 			})
-			.catch((error) => {
-				return { ...obj, status: error, code: response.status }
+			.catch(() => {
+				return { ...obj, status: "Only URLs", code: "no status code" }
 			})
 	})
 	return (Promise.all(arrayStatus))
@@ -79,9 +79,11 @@ function stats(result) {
 }
 
 function broken(result) {
-	const broken = result.filter(item => item.status == 'FAIL');
+	const fail = result.filter(item => item.status == 'FAIL');
+	const noURLs = result.filter(item => item.status == 'Only URLs');
+	const Broken =fail.length + noURLs.length
 	const bronkenLink = {
-		Broken: broken.length
+		Broken
 	}
 	return bronkenLink
 }

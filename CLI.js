@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const chalk = require('chalk');
 const process = require('process')
 const yargs = require('yargs')
@@ -6,6 +7,8 @@ const index = require('./index.js');
 const myArgs = process.argv.slice(2);
 const PathMD = myArgs[0]
 console.log(PathMD)
+
+
 const argv = yargs
 	.option('validate', {
 		alias: 'v',
