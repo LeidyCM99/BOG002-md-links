@@ -6,11 +6,17 @@
 Es una libreria descargable que te permite extraer los links de documento markdown ademas puedes validar y obtener el status de cada uno de aquellos links, tambien por medio de las estadisticas obtener un total, unicos y los rotos.
 
 ## ¿Como lo instalo?
+
+Install from the command line:
+
 ```sh
-$ md-links ./some/example.md
-./some/example.md http://algo.com/2/3/ Link a algo
-./some/example.md https://otra-cosa.net/algun-doc.html algún doc
-./some/example.md http://google.com/ Google
+npm install @paolacm99/npm-mdlinks-libreria@0.1.0
+
+```
+Install via package.json:
+```sh
+"@paolacm99/npm-mdlinks-libreria": "0.1.0"
+
 ```
 ## ¿Que puedo ver?
 
