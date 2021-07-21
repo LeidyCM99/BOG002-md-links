@@ -34,7 +34,7 @@ if (argv.validate && !argv.stats) {
 		.then((obj) => {
 			index.statusLinks(obj)
 				.then((result) => {
-					console.log(chalk.bold.yellowBright("************************ Validate the links ***************************"));
+					console.log(chalk.bold.yellowBright("                                  ************************ VALIDATE THE LINKS ***************************"));
 					console.log(result)
 				})
 		})
@@ -43,7 +43,7 @@ if (argv.validate && !argv.stats) {
 if (argv.stats && !argv.validate) {
 	md.MdLinks(PathMD, { validate: true })
 		.then((obj) => {
-			console.log(chalk.bold.yellowBright("****** Stats the links *******"));
+			console.log(chalk.bold.yellowBright("  ******  S T A T S  *******"));
 			console.table(index.stats(obj))
 		})
 }
@@ -51,7 +51,7 @@ if (argv.stats && !argv.validate) {
 if (argv.stats && argv.validate) {
 	md.MdLinks(PathMD, { validate: true })
 		.then((obj) => {
-			console.log(chalk.bold.yellowBright("******* Stats and validate *******"))
+			console.log(chalk.bold.yellowBright(" *******  STATS AND VALIDATE  *******"))
 			console.table(index.stats(obj))
 			console.table(index.broken(obj))
 		})
@@ -60,7 +60,7 @@ if (argv.stats && argv.validate) {
 if (!argv.stats && !argv.validate) {
 	md.MdLinks(PathMD, { validate: false })
 		.then((obj) => {
-			console.log(chalk.bold.yellowBright("************************ Links ***************************"))
-			console.log(obj)
+			console.log(chalk.bold.yellowBright("                                    ************************  L I N K S   ***************************"))
+			console.table(obj)
 		})
 }
