@@ -5,7 +5,7 @@
 
 Es una libreria descargable que te permite extraer los links de documento markdown ademas puedes validar y obtener el status de cada uno de aquellos links, tambien por medio de las estadisticas obtener un total, unicos y los rotos.
 
-## ⬇ ¿Como lo instalo? 
+##  ¿Como lo instalo? ⬇
 
 Install from the command line:
 
@@ -38,7 +38,7 @@ mdlinks {ruta}
 ``` 
 Escribiendo solo mdlinks y la ruta puedes visualizar todos links que estan en el archivo  
 
-![Unicamente links](./img/ingreso_parametros.PNG)  
+![Unicamente links](./img/links.PNG)  
  
  2. --validate  
 
