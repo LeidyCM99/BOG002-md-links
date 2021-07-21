@@ -5,7 +5,7 @@
 
 Es una libreria descargable que te permite extraer los links de documento markdown ademas puedes validar y obtener el status de cada uno de aquellos links, tambien por medio de las estadisticas obtener un total, unicos y los rotos.
 
-## ¿Como lo instalo?
+## ⬇ ¿Como lo instalo? 
 
 Install from the command line:
 
@@ -18,7 +18,7 @@ Install via package.json:
 "@paolacm99/npm-mdlinks-libreria": "0.1.0"
 
 ```
-## ¿Que puedo ver?
+## ¿Que puedo ver? 👀
 
 Puedes ver cuatro estados de los links del documento markdown escribiendo lo siguiente en consola
 
@@ -29,17 +29,19 @@ Recuerda:
 *  las **opciones** son las siguientes:   
 
 
+1. Links  
 
-1. ```sh
-mdlinks {ruta} {opcion}
+
+ ```sh
+mdlinks {ruta} 
 
 ``` 
-
 Escribiendo solo mdlinks y la ruta puedes visualizar todos links que estan en el archivo  
 
 ![Unicamente links](./img/ingreso_parametros.PNG)  
  
- 2. --validate
+ 2. --validate  
+
 ```sh
 mdlinks {ruta} --validate
 
@@ -66,11 +68,13 @@ mdlinks {ruta} --validate --stats
 ```   
 Con esta ultima opcion podemos ver el total de links, la cantidad de links unicos y tambien aquellos que se encuentran rotos.  
 
-![Validate and stats](./img/stats and validate.PNG)
+![Validate and stats](./img/statsValidate.PNG)
 
 
 
-________________________________________________________________________________________
+________________________________________________________________________________________  
+  
+  
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
