@@ -22,42 +22,51 @@ Install via package.json:
 
 Puedes ver cuatro estados de los links del documento markdown escribiendo lo siguiente en consola
 
-```sh
-"mdlinks {ruta} {opcion}"
-
-```
-### Ejemplo  
-
- ![Unicamente links](./img/ingreso_parametros.PNG)  
 
 Recuerda:  
 * La **ruta** que escribes puede ser absoluta o relativa, pero obligatoriamente debe ser un archivo **md**  
 
-*  las opciones son las siguientes:   
+*  las **opciones** son las siguientes:   
 
 
 
-1. Los links  
+1. ```sh
+mdlinks {ruta} {opcion}
+
+``` 
 
 Escribiendo solo mdlinks y la ruta puedes visualizar todos links que estan en el archivo  
 
 ![Unicamente links](./img/ingreso_parametros.PNG)  
+ 
+ 2. --validate
+```sh
+mdlinks {ruta} --validate
 
-2. --validate  
-
+```
+ 
 Esta opcion te permite ver el status de cada link  
 
-![Validate](./img/ingreso_parametros.PNG)  
+![Validate](./img/validate.PNG)    
 
 3. --stats  
+```sh
+mdlinks {ruta} --stats 
+
+```  
 Podemos ver las estadisticas, indicandonos el total de links y la cantidad de aquellos que no se repiten.  
 
-![Stats](./img/ingreso_parametros.PNG)  
+![Stats](./img/stats.PNG)      
 
 4. --validate --stats  
+
+```sh
+mdlinks {ruta} --validate --stats
+
+```   
 Con esta ultima opcion podemos ver el total de links, la cantidad de links unicos y tambien aquellos que se encuentran rotos.  
 
-![Validate and stats](./img/ingreso_parametros.PNG)
+![Validate and stats](./img/stats and validate.PNG)
 
 
 
